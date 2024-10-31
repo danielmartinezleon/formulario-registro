@@ -1,0 +1,105 @@
+<div class="container-fluid" style="width: 400px;">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-center">Agregar usuario</h1>
+        </div>
+    </div>
+
+    <div [hidden]="submitted">
+        <form 
+        action=""
+        method="post"
+        (ngSubmit)="addUsuario()"
+        #usuarioForm="ngForm">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <label for="name" class="for-label">Nombre:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="name"
+                        placeholder="Nombre"
+                        required
+                        [(ngModel)]="usuario.name"
+                        />
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="lastName" class="for-label">Apellidos:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="lastName"
+                        placeholder="Apellidos"
+                        required
+                        [(ngModel)]="usuario.lastName"
+                        />
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="knowledge" class="for-label">Cómo conociste el centro:</label>
+                    <select
+                        class="for-select"
+                        aria-label="Default select example"
+                        name="knowledge"
+                        id="knowledge"
+                        required
+                        [(ngModel)]="usuario.knowledge"
+                        >
+                    <option value="" selected="selected">-Escoge una opción</option>
+                    @for(knowledge of knowledgeList; track knowledge){
+                        <option [value]="knowledge">{{knowledge}}</option>
+                    }
+                    </select>
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="NIF" class="for-label">NIF:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="NIF"
+                        placeholder="NIF"
+                        required
+                        [(ngModel)]="usuario.NIF"
+                        />
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="email" class="for-label">Email:</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Email"
+                        required
+                        [(ngModel)]="usuario.email"
+                        />
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="phone" class="for-label">Nombre:</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="phone"
+                        placeholder="phone"
+                        required
+                        [(ngModel)]="usuario.phone"
+                        />
+                </div>
+                <div class="col-12 mb-3">
+                    <label for="sex" class="for-label">Cómo conociste el centro:</label>
+                    <select
+                        class="for-select"
+                        aria-label="Default select example"
+                        name="sex"
+                        id="sex"
+                        required
+                        [(ngModel)]="usuario.sex"
+                        >
+                    <option value="" selected="selected">-Escoge una opción</option>
+                    @for(sex of sexList; track sex){
+                        <option [value]="sex">{{sex}}</option>
+                    }
+                    </select>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
